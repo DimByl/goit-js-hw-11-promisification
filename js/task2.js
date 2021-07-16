@@ -10,7 +10,7 @@ const toggleUserState = (allUsers, userName, callback) => {
     user.name === userName ? { ...user, active: !user.active } : user,
   );
 
-  callback(updatedUsers);
+  return new Promise(res => res(updatedUsers));
 };
 
 const logger = updatedUsers => console.table(updatedUsers);
